@@ -1,8 +1,11 @@
 package com.ztkmkoo.purelink.core;
 
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.security.MessageDigest;
 
+@Slf4j
 public class Block {
 
     private static final String DEFAULT_CHARSET_NAME = "UTF-8";
@@ -11,6 +14,7 @@ public class Block {
         final byte[] genesisBlockPreviousHeaderByte = new byte[16];
         final BlockHeader blockHeader = new BlockHeader(genesisBlockPreviousHeaderByte);
 
+        log.info("Init genesis block with block header: {}", blockHeader.toString());
         return new Block(blockHeader);
     }
 
