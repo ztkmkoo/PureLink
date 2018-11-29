@@ -3,14 +3,15 @@ plugins {
 }
 
 group 'com.ztkmkoo.purelink'
-version '0.0.1-SNAPSHOT'
-
-sourceCompatibility = 1.8
+version '0.0.2'
 
 repositories {
-    mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.12', version: '2.5.18'
+
+    compile project (':core')
+    
+    testCompile group: 'com.typesafe.akka', name: 'akka-testkit_2.12', version: '2.5.18'
 }
