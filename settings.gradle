@@ -1,3 +1,4 @@
 rootProject.name = 'purelink'
 include 'core'
+include 'node'
 
