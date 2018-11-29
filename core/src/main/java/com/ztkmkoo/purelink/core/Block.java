@@ -26,6 +26,15 @@ public class Block {
         this.blockHash = getBlockHash(blockHeader);
     }
 
+    private Block(final BlockHeader blockHeader, final byte[] blockHash) {
+        this.blockHeader = blockHeader;
+        this.blockHash = blockHash;
+    }
+
+    public Block deepCopy() {
+        return new Block(blockHeader, blockHash);
+    }
+
     private byte[] getBlockHash(final BlockHeader blockHeader) {
         try {
             final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
