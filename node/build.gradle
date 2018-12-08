@@ -3,13 +3,13 @@ plugins {
 }
 
 group 'com.ztkmkoo.purelink'
-version '0.0.2'
+version '0.0.3'
 
 repositories {
 }
 
 dependencies {
-    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.12', version: '2.5.18'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.11', version: '2.5.19'
 
     compile project (':core')
     
