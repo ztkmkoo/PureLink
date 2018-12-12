@@ -2,6 +2,8 @@ package com.ztkmkoo.purelink.core.database;
 
 public class EmptyDatabase extends AbstractDatabase<Integer, Object> {
 
+    EmptyDatabase() {}
+
     @Override
     public boolean initOnLoad() {
         return false;

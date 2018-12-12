@@ -3,6 +3,9 @@ package com.ztkmkoo.purelink.core.database;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Expect the list is non concurrency.
+ */
 public abstract class AbstractDatabase<K, V> {
 
     protected final List<V> list = new ArrayList<>();
@@ -12,7 +15,11 @@ public abstract class AbstractDatabase<K, V> {
     abstract public V getByKey(final K key);
     abstract public V deleteByKey(final K key);
 
-    public static AbstractDatabase createDatabaseStaticInstance() {
+    public static <T extends AbstractDatabase> AbstractDatabase createDatabaseStaticInstance(final Class<T> tClass) {
+        if (tClass.equals(EmptyDatabase.class)) {
+            return new EmptyDatabase();
+        }
+
         return new TempMemoryDatabase();
     }
 }
