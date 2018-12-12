@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.ztkmkoo.purelink'
-version '0.0.3'
+version '0.0.4'
 
 repositories {
 }
@@ -13,5 +13,5 @@ dependencies {
 
     compile project (':core')
     
-    testCompile group: 'com.typesafe.akka', name: 'akka-testkit_2.12', version: '2.5.18'
+    testCompile group: 'com.typesafe.akka', name: 'akka-testkit_2.11', version: '2.5.19'
 }
